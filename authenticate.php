@@ -28,7 +28,7 @@
 		if ($result->num_rows > 0) {
 			session_start();
 			$_SESSION["username"] = $username;
-			echo "<script>alert('로그인에 성공하였습니다');</script>";
+			echo "<script>alert('" . htmlspecialchars($username, ENT_QUOTES, 'UTF-8') . "님, 환영합니다'); history.back(-1);</script>";
 			//header("location: webshell.php");
 			exit();
 		} else {
